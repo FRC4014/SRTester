@@ -13,16 +13,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 #include <Servo.h>
 
-int percent = 0;  //between -100 and 100, indicates how fast the motor will be moving
+//User configuration:
+int percent = 0;  //between -100 and 100, indicates how fast the motor will be moving initially
 int pins[] = {5, 6}; //the signal output pins (as many as you'd like)
 
 
-Servo controllers[sizeof(pins)];
+const int arraySize = sizeof(pins)/sizeof(int);
+Servo controllers[arraySize];
 
 void setup() {
   Serial.begin(9600);
   Serial.println("you called, master?\n");
-  for (int i=0; i<sizeof(controllers); i++)
+  for (int i=0; i<arraySize; i++)
     controllers[i].attach(pins[i]); //associate the object to a pin
   delay(1000);
   Serial.println("type in a percent, and I will output your PWM.\n");
@@ -33,7 +35,7 @@ void setup() {
 void loop() {
   int PWMvalue = percent * 5 + 1500; //scale up to 1000-2000
 
-  for (int i=0; i<sizeof(controllers); i++)
+  for (int i=0; i<arraySize; i++)
     controllers[i].writeMicroseconds(PWMvalue);
 
   if (Serial.available() > 1) {
