@@ -14,7 +14,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 #include <Servo.h>
 
 //User configuration:
-int percent = 0;  //between -100 and 100, indicates how fast the motor will be moving initially
+int percent = 0;  //between -100 and 100, indicates how fast the motor 
+      //will be moving when the arduino boots
 int pins[] = {5, 6}; //the signal output pins (as many as you'd like)
 
 
