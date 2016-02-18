@@ -18,6 +18,10 @@ Wiring is dead simple. You only need to connect the PWM ground pin to the Arduin
 
 Of course, then you'll have to hook up your Talons to a battery.  Alligator clips will do, but a nice solder and crimp job will be appreciated.
 
+Here's an example of what we did (click to see more detail):
+
+<img src="wiringExample.jpg" width="500" alt="Wiring Example"/>
+
 ## Other Notes
 The original Talon and the Talon SRX will probably work also, although I haven't tested them.  Other motor controllers won't work by default, but you can easily modify the code to support them. 
 
